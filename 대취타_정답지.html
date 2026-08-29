@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>대취타 정답지</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Serif KR',serif;background:#b8b8b8;color:#111;word-break:keep-all;overflow-wrap:break-word;}
+
+.page{width:210mm;height:297mm;overflow:hidden;margin:0 auto 16px;background:#fff;padding:8mm 11mm 8mm;display:flex;flex-direction:column;page-break-after:always;page-break-inside:avoid;box-shadow:0 3px 14px rgba(0,0,0,.22);}
+@media print{
+  body{background:#fff;margin:0;padding:0;}
+  .page{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid;width:210mm;height:297mm;}
+  @page{size:A4 portrait;margin:0;}
+}
+
+.sec-title{font-family:'Nanum Myeongjo',serif;font-size:17.5pt;font-weight:800;color:#111;border-bottom:2.5px solid #444;padding-bottom:4px;margin-bottom:6px;letter-spacing:.05em;flex-shrink:0;}
+.sec-sub{font-size:12.5pt;color:#444;margin-bottom:4px;font-style:italic;flex-shrink:0;}
+.divider{width:100%;height:1px;background:#bbb;margin:7px 0;flex-shrink:0;}
+
+.chip{font-size:12pt;background:#f0f0f0;border:1px solid #aaa;border-radius:10px;padding:2px 8px;color:#111;display:inline-block;margin:2px 2px;font-weight:600;}
+.blank{display:inline-block;border-bottom:2.5px solid #555;border-radius:3px;padding:2px 5px;font-weight:800;font-size:inherit;min-width:52px;}
+.blank-md{min-width:84px;}
+.blank-lg{min-width:106px;}
+
+.page-footer{margin-top:auto;padding-top:4px;border-top:1.5px solid #bbb;display:flex;justify-content:space-between;align-items:center;font-size:11pt;color:#777;flex-shrink:0;font-weight:600;}
+.page-num{width:22px;height:22px;border-radius:50%;background:#333;color:#fff;font-size:11pt;font-weight:800;display:flex;align-items:center;justify-content:center;}
+
+.p1-header{border:2px solid #aaa;border-radius:8px;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;flex-shrink:0;}
+.p1-title{font-family:'Nanum Myeongjo',serif;font-size:32.5pt;font-weight:800;color:#111;letter-spacing:.2em;line-height:1;}
+.p1-sub{font-size:12pt;color:#444;letter-spacing:.18em;margin-top:3px;font-weight:600;}
+.p1-info{font-size:11pt;color:#555;text-align:right;line-height:1.8;font-weight:600;}
+.p1-info b{color:#111;font-weight:800;}
+
+.stu-bar{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:5px;flex-shrink:0;}
+.stu-cell{border:2px solid #bbb;border-radius:6px;padding:7px 12px;display:flex;align-items:center;gap:8px;}
+.stu-label{font-weight:800;color:#111;font-size:15pt;white-space:nowrap;}
+.stu-line{flex:1;border-bottom:2px solid #888;height:18px;}
+
+.def-box{border:2px solid #bbb;border-left:5px solid #666;border-radius:6px;padding:12px 18px;font-size:15pt;line-height:1.7;color:#111;font-weight:600;margin-bottom:6px;flex-shrink:0;}
+
+.elem-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-bottom:6px;flex-shrink:0;}
+.elem-card{border:2px solid #bbb;border-radius:6px;padding:7px 8px;text-align:center;}
+.elem-icon{font-size:16pt;display:block;margin-bottom:2px;}
+.elem-name{font-size:13pt;font-weight:800;color:#111;margin-bottom:2px;}
+.elem-desc{font-size:10.5pt;color:#444;line-height:1.3;font-weight:600;}
+
+.comp-wrap{width:100%;border:2px solid #aaa;border-radius:6px;overflow:hidden;margin-bottom:5px;flex-shrink:0;}
+.comp-head{display:grid;grid-template-columns:82px 1fr 1fr;background:#e8e8e8;border-bottom:2px solid #aaa;}
+.comp-head-cell{padding:8px 8px;text-align:center;font-weight:800;font-size:14pt;color:#111;white-space:nowrap;}
+.comp-head-cell:not(:last-child){border-right:1.5px solid #bbb;}
+.comp-row{display:grid;grid-template-columns:82px 1fr 1fr;border-bottom:1.5px solid #ccc;}
+.comp-row:last-child{border-bottom:none;}
+.c-key{padding:11px 8px;font-weight:800;font-size:13pt;color:#111;background:#f2f2f2;display:flex;align-items:center;justify-content:center;text-align:center;white-space:nowrap;border-right:1.5px solid #ccc;}
+.c-ans{padding:0 8px;background:#fff;display:flex;align-items:center;justify-content:center;min-height:34px;text-align:center;font-weight:800;}
+.c-ans span{font-size:11.5pt;}
+.c-ans:not(:last-child){border-right:1.5px solid #ccc;}
+
+.char-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;flex-shrink:0;}
+.char-card{border-radius:6px;padding:13px 15px;border:2px solid #bbb;border-left:4px solid #777;display:flex;flex-direction:column;gap:6px;}
+.char-badge-sm{font-size:10.5pt;padding:2px 8px;border-radius:10px;font-weight:800;display:inline-block;align-self:flex-start;border:1.5px solid #aaa;color:#222;margin-bottom:1px;background:#f5f5f5;}
+.char-blank-name{font-family:'Nanum Myeongjo',serif;font-size:16pt;font-weight:800;display:inline-block;min-width:70px;border-bottom:2.5px solid #444;border-radius:3px;padding:1px 6px;color:#111;}
+.char-desc-sm{font-size:11pt;color:#111;line-height:1.5;font-weight:600;}
+.bogi-chips{display:flex;flex-wrap:wrap;gap:3px;margin-top:2px;}
+
+.ord-table{width:100%;border-collapse:collapse;font-size:13pt;flex-shrink:0;}
+.ord-table th{background:#e8e8e8;color:#111;padding:12px 9px;font-weight:800;text-align:center;border:1.5px solid #aaa;font-size:13pt;}
+.ord-table td{padding:15px 14px;border:1.5px solid #bbb;vertical-align:middle;line-height:1.6;font-size:13pt;font-weight:600;}
+.ord-table tr:nth-child(even) td{background:#fafafa;}
+.ord-num-cell{width:56px;text-align:center;font-size:14pt;font-weight:800;color:#111;white-space:nowrap;}
+
+.number-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;flex-shrink:0;margin-bottom:6px;}
+.number-card{border-radius:6px;padding:11px 13px;border:2px solid #bbb;border-left:4px solid #777;display:flex;flex-direction:column;gap:5px;}
+.num-badge{font-size:11pt;color:#444;font-weight:800;letter-spacing:.08em;}
+.num-icon{font-size:17.5pt;}
+.num-title{font-family:'Nanum Myeongjo',serif;font-size:15.5pt;font-weight:800;color:#111;line-height:1.2;}
+.num-desc{font-size:12pt;color:#111;line-height:1.55;font-weight:600;}
+.num-q{font-size:12pt;color:#111;font-weight:800;margin-top:4px;}
+.write-lines{display:flex;flex-direction:column;gap:12px;margin-top:6px;}
+.wline{border-bottom:1.5px solid #aaa;height:22px;}
+
+.essay-box{border:2px solid #bbb;border-left:4px solid #777;border-radius:6px;padding:11px 16px;flex-shrink:0;margin-bottom:8px;}
+.essay-q-sm{font-size:14pt;font-weight:800;color:#111;line-height:1.65;margin-bottom:7px;}
+.essay-q-sm em{color:#111;font-style:normal;font-weight:800;}
+.write-block{border:1.5px solid #bbb;border-radius:5px;padding:6px 10px;}
+.wl{border-bottom:1.5px solid #bbb;height:26px;}
+.ans-banner{background:#c0392b;color:#fff;text-align:center;font-weight:800;font-size:14pt;letter-spacing:.15em;padding:4px;border-radius:5px;margin-bottom:5px;}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+
+  <div class="p1-header">
+    <div>
+      <div class="p1-title">대취타</div>
+      <div class="p1-sub">DAECHWITA · 大吹打 · 활동지</div>
+    </div>
+    <div class="p1-info">
+      국가무형유산<br/>
+      조선시대 궁중 행진음악<br/>
+      아명(다른 이름) 무령지곡(武寧之曲)
+    </div>
+  </div>
+
+  <div class="ans-banner">정 답 지 · ANSWER KEY</div>
+  <div class="stu-bar">
+    <div class="stu-cell"><span class="stu-label">학&nbsp;&nbsp;&nbsp;번</span><div class="stu-line"></div></div>
+    <div class="stu-cell"><span class="stu-label">이&nbsp;&nbsp;&nbsp;름</span><div class="stu-line"></div></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sec-title">① 대취타란 무엇인가요?</div>
+  <div class="def-box">
+    <strong>대취타(大吹打)</strong>는 "크게(大) 불고(吹) 두드린다(打)"는 뜻으로, 조선시대
+    <span class="blank blank-md"><span style="color:#c0392b;">왕의 행차</span></span>나 군대의 행진에서 연주되던 대표적인
+    <span class="blank blank-lg"><span style="color:#c0392b;">행진음악</span></span>(행악)이다.
+  </div>
+  <div class="sec-sub">📌 보기 : <span class="chip">왕의 행차</span> <span class="chip">행진음악</span></div>
+
+  <div class="divider"></div>
+
+  <div class="sec-title">대취타의 편성 — 집사와 6가지 악기</div>
+  <div class="elem-grid" style="grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr;">
+    <div class="elem-card"><div class="elem-name"><span class="blank" style="min-width:46px;"><span style="color:#c0392b;">집사</span></span></div><div class="elem-desc">지휘·구령을 외치는 사람</div></div>
+    <div class="elem-card"><div class="elem-name"><span class="blank" style="min-width:46px;"><span style="color:#c0392b;">태평소</span></span></div><div class="elem-desc">유일한 선율악기</div></div>
+    <div class="elem-card"><div class="elem-name"><span class="blank" style="min-width:46px;"><span style="color:#c0392b;">나발</span></span></div><div class="elem-desc">긴 관악기·한 음</div></div>
+    <div class="elem-card"><div class="elem-name"><span class="blank" style="min-width:46px;"><span style="color:#c0392b;">나각</span></span></div><div class="elem-desc">소라 껍데기 관악기</div></div>
+    <div class="elem-card"><div class="elem-name"><span class="blank" style="min-width:46px;"><span style="color:#c0392b;">용고</span></span></div><div class="elem-desc">메고 걷는 행진용 북</div></div>
+    <div class="elem-card"><div class="elem-name"><span class="blank" style="min-width:46px;"><span style="color:#c0392b;">징</span></span></div><div class="elem-desc">시작·종결 신호</div></div>
+    <div class="elem-card"><div class="elem-name"><span class="blank" style="min-width:46px;"><span style="color:#c0392b;">자바라</span></span></div><div class="elem-desc">놋쇠 심벌즈</div></div>
+  </div>
+  <div class="sec-sub">📌 보기 : <span class="chip">집사</span> <span class="chip">태평소</span> <span class="chip">나발</span> <span class="chip">나각</span> <span class="chip">용고</span> <span class="chip">징</span> <span class="chip">자바라</span></div>
+
+  <div class="divider"></div>
+
+  <div class="sec-title">② 대취타와 취타의 차이점</div>
+  <div class="sec-sub">빈칸에 알맞은 말을 보기에서 골라 쓰세요.</div>
+  <div class="comp-wrap">
+    <div class="comp-head"><div class="comp-head-cell">비교 항목</div><div class="comp-head-cell">🥁 대취타</div><div class="comp-head-cell">🎻 취타</div></div>
+    <div class="comp-row"><div class="c-key">연주 장소</div><div class="c-ans"><span style="color:#c0392b;">야외(행진)</span></div><div class="c-ans"><span style="color:#c0392b;">실내</span></div></div>
+    <div class="comp-row"><div class="c-key">악기 편성</div><div class="c-ans"><span style="color:#c0392b;">태평소·나발·나각·용고·징·자바라</span></div><div class="c-ans"><span style="color:#c0392b;">해금·가야금 등 현악기 추가</span></div></div>
+    <div class="comp-row"><div class="c-key">다른 이름</div><div class="c-ans"><span style="color:#c0392b;">무령지곡</span></div><div class="c-ans"><span style="color:#c0392b;">만파정식지곡</span></div></div>
+  </div>
+  <div class="sec-sub">
+    📌 보기 : <span class="chip">야외(행진)</span> <span class="chip">실내</span> <span class="chip">태평소·나발·나각·용고·징·자바라</span> <span class="chip">해금·가야금 등 현악기 추가</span>
+    <span class="chip">무령지곡</span> <span class="chip">만파정식지곡</span>
+  </div>
+
+  <div class="page-footer">
+    <span>🥁 대취타 활동지</span>
+    <div style="display:flex;align-items:center;gap:5px;"><span>① 개념 · 편성 · ② 비교</span><div class="page-num">1</div></div>
+  </div>
+</div>
+
+
+<!-- PAGE 2 -->
+<div class="page">
+
+  <div class="sec-title">③ 악기 살펴보기</div>
+  <div class="sec-sub">빈칸에 알맞은 이름을 보기에서 골라 쓰세요.</div>
+  <div class="char-grid">
+
+    <div class="char-card">
+      <span class="char-badge-sm">지휘자 · 구령을 외치는 역할</span>
+      <div><span class="char-blank-name"><span style="color:#c0392b;">집사</span></span></div>
+      <div class="char-desc-sm">"명금일하 대취타!"를 외쳐<br/><strong>연주의 시작</strong>을 알린다.</div>
+      <div class="bogi-chips"><span class="chip">집사</span><span class="chip">태평소</span><span class="chip">나발</span><span class="chip">용고</span><span class="chip">징</span><span class="chip">자바라</span></div>
+    </div>
+
+    <div class="char-card">
+      <span class="char-badge-sm">겹서 관악기 · 대취타의 주인공</span>
+      <div><span class="char-blank-name"><span style="color:#c0392b;">태평소</span></span></div>
+      <div class="char-desc-sm">대취타에서 <strong>유일하게 가락</strong>을<br/>연주하는 선율악기이다.</div>
+      <div class="bogi-chips"><span class="chip">나발</span><span class="chip">나각</span><span class="chip">태평소</span><span class="chip">용고</span><span class="chip">징</span><span class="chip">자바라</span></div>
+    </div>
+
+    <div class="char-card">
+      <span class="char-badge-sm">놋쇠 관악기</span>
+      <div><span class="char-blank-name"><span style="color:#c0392b;">나발</span></span></div>
+      <div class="char-desc-sm">곧게 뻗은 금속관에서<br/><strong>한 가지 음</strong>만 길게 낸다.</div>
+      <div class="bogi-chips"><span class="chip">태평소</span><span class="chip">나발</span><span class="chip">나각</span><span class="chip">용고</span><span class="chip">징</span><span class="chip">자바라</span></div>
+    </div>
+
+    <div class="char-card">
+      <span class="char-badge-sm">자연 소재 관악기</span>
+      <div><span class="char-blank-name"><span style="color:#c0392b;">나각</span></span></div>
+      <div class="char-desc-sm">자연산 소라 껍데기에<br/>취구를 달아 <strong>둥글고 낮은 소리</strong>를 낸다.</div>
+      <div class="bogi-chips"><span class="chip">징</span><span class="chip">용고</span><span class="chip">나각</span><span class="chip">나발</span><span class="chip">자바라</span><span class="chip">태평소</span></div>
+    </div>
+
+    <div class="char-card">
+      <span class="char-badge-sm">양면 가죽북</span>
+      <div><span class="char-blank-name"><span style="color:#c0392b;">용고</span></span></div>
+      <div class="char-desc-sm">몸 앞에 <strong>가로로 메고</strong><br/>걸으며 양손 채로 두드린다.</div>
+      <div class="bogi-chips"><span class="chip">자바라</span><span class="chip">징</span><span class="chip">용고</span><span class="chip">나발</span><span class="chip">나각</span><span class="chip">태평소</span></div>
+    </div>
+
+    <div class="char-card">
+      <span class="char-badge-sm">놋쇠 타악기</span>
+      <div><span class="char-blank-name"><span style="color:#c0392b;">징</span></span></div>
+      <div class="char-desc-sm">궁중에서는 <strong>대금(大金)</strong>이라 불렸으며<br/>연주의 시작과 끝을 알린다.</div>
+      <div class="bogi-chips"><span class="chip">용고</span><span class="chip">자바라</span><span class="chip">징</span><span class="chip">나발</span><span class="chip">나각</span><span class="chip">태평소</span></div>
+    </div>
+
+    <div class="char-card">
+      <span class="char-badge-sm">놋쇠 타악기</span>
+      <div><span class="char-blank-name"><span style="color:#c0392b;">자바라</span></span></div>
+      <div class="char-desc-sm">심벌즈처럼 두 짝을<br/><strong>맞부딪쳐</strong> 소리를 낸다.</div>
+      <div class="bogi-chips"><span class="chip">징</span><span class="chip">용고</span><span class="chip">자바라</span><span class="chip">나발</span><span class="chip">나각</span><span class="chip">태평소</span></div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>🥁 대취타 활동지</span>
+    <div style="display:flex;align-items:center;gap:5px;"><span>③ 악기 살펴보기</span><div class="page-num">2</div></div>
+  </div>
+</div>
+
+
+<!-- PAGE 3 -->
+<div class="page">
+
+  <div class="sec-title">④ 대취타의 복식</div>
+  <div class="sec-sub">빈칸에 알맞은 말을 보기에서 골라 쓰세요.</div>
+  <div class="elem-grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:10px;">
+    <div class="elem-card" style="padding:20px 10px;"><div class="elem-name"><span class="blank" style="min-width:46px;"><span style="color:#c0392b;">초립</span></span></div><div class="elem-desc">꿩 깃(작우)을 꽂은 모자</div></div>
+    <div class="elem-card" style="padding:20px 10px;"><div class="elem-name"><span class="blank" style="min-width:46px;"><span style="color:#c0392b;">철릭</span></span></div><div class="elem-desc">황색(노란색)의 겉옷</div></div>
+    <div class="elem-card" style="padding:20px 10px;"><div class="elem-name"><span class="blank" style="min-width:46px;"><span style="color:#c0392b;">남전대</span></span></div><div class="elem-desc">남색(파란색) 허리띠</div></div>
+    <div class="elem-card" style="padding:20px 10px;"><div class="elem-name"><span class="blank" style="min-width:46px;"><span style="color:#c0392b;">미투리</span></span></div><div class="elem-desc">짚으로 삼은 신발</div></div>
+  </div>
+  <div class="sec-sub">📌 보기 : <span class="chip">초립</span> <span class="chip">철릭</span> <span class="chip">남전대</span> <span class="chip">미투리</span></div>
+
+  <div class="divider" style="margin:22px 0;"></div>
+
+  <div class="sec-title">구음으로 연주하는 순서</div>
+  <div class="sec-sub">빈칸에 알맞은 말을 써넣어 연주 순서를 완성하세요.</div>
+  <table class="ord-table" style="margin-top:4px;">
+    <thead><tr><th style="width:56px;">순서</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td class="ord-num-cell">①</td><td>모둠(또는 줄)을 7개로 나누고, 집사와 6개 악기를 하나씩 맡는다.</td></tr>
+      <tr><td class="ord-num-cell">②</td><td>집사가 " <span class="blank" style="min-width:150px;"><span style="color:#c0392b;">명금일하 대취타</span></span> !"를 외치면 모두 " <span class="blank" style="min-width:60px;"><span style="color:#c0392b;">예이</span></span> !"라고 답한다.</td></tr>
+      <tr><td class="ord-num-cell">③</td><td><span class="blank" style="min-width:50px;"><span style="color:#c0392b;">징</span></span> 모둠이 소리를 내면 연주가 시작된다.</td></tr>
+      <tr><td class="ord-num-cell">④</td><td>각자 맡은 줄의 구음을 차례대로 또는 다같이 외친다.</td></tr>
+      <tr><td class="ord-num-cell">⑤</td><td>마지막에 다시 <span class="blank" style="min-width:50px;"><span style="color:#c0392b;">징</span></span> 소리로 연주를 마친다.</td></tr>
+    </tbody>
+  </table>
+  <div class="sec-sub" style="margin-top:8px;">📌 보기 : <span class="chip">명금일하 대취타</span> <span class="chip">예이</span> <span class="chip">징</span></div>
+
+  <div class="divider" style="margin:22px 0;"></div>
+
+  <div class="sec-title">대취타(무령지곡)의 음악적 특징</div>
+  <div class="elem-grid" style="margin-top:6px;">
+    <div class="elem-card" style="padding:20px 10px;"><div class="elem-name"><span class="blank" style="min-width:50px;"><span style="color:#c0392b;">취타장단</span></span></div><div class="elem-desc">3소박 20박(60/8박자)의 정해진 장단</div></div>
+    <div class="elem-card" style="padding:20px 10px;"><div class="elem-name"><span class="blank" style="min-width:50px;"><span style="color:#c0392b;">위엄 있는 소리</span></span></div><div class="elem-desc">관악기 중심의 호령하듯 장쾌한 느낌</div></div>
+    <div class="elem-card" style="padding:20px 10px;"><div class="elem-name"><span class="blank" style="min-width:50px;"><span style="color:#c0392b;">행진 음악</span></span></div><div class="elem-desc">걸으면서 연주하는 야외 군례악</div></div>
+  </div>
+  <div class="sec-sub">📌 보기 : <span class="chip">취타장단</span> <span class="chip">위엄 있는 소리</span> <span class="chip">행진 음악</span></div>
+
+  <div class="page-footer">
+    <span>🥁 대취타 활동지</span>
+    <div style="display:flex;align-items:center;gap:5px;"><span>④ 복식 · 연주 순서 · 음악적 특징</span><div class="page-num">3</div></div>
+  </div>
+</div>
+
+
+<!-- PAGE 4 -->
+<div class="page">
+
+  <div class="sec-title">⑤ 오늘날의 대취타 — 슈가 「대취타」</div>
+  <div class="sec-sub">영상을 감상하고 빈칸을 채운 뒤, 느낀 점을 써 보세요.</div>
+  <div class="number-grid">
+
+    <div class="number-card">
+      <div class="num-badge">POINT ①</div>
+      <div class="num-title"><span class="blank blank-lg"><span style="color:#c0392b;">어거스트 디</span></span></div>
+      <div class="num-desc">방탄소년단 <strong>슈가</strong>가 활동한<br/>솔로 아티스트명</div>
+      <div class="num-q">Q. 느낀 점을 써 보세요.</div>
+      <div class="write-lines"><div class="wline"></div><div class="wline"></div><div class="wline"></div></div>
+    </div>
+
+    <div class="number-card">
+      <div class="num-badge">POINT ②</div>
+      <div class="num-title"><span class="blank blank-lg"><span style="color:#c0392b;">태평소</span></span> 소리</div>
+      <div class="num-desc">노래가 시작되자마자 나오는,<br/><strong>1984년 국립국악원</strong> 연주 샘플</div>
+      <div class="num-q">Q. 느낀 점을 써 보세요.</div>
+      <div class="write-lines"><div class="wline"></div><div class="wline"></div><div class="wline"></div></div>
+    </div>
+
+    <div class="number-card">
+      <div class="num-badge">POINT ③</div>
+      <div class="num-title"><span class="blank blank-lg"><span style="color:#c0392b;">취타장단</span></span></div>
+      <div class="num-desc">전통 대취타의 리듬이 그대로<br/>살아있는 <strong>힙합 비트</strong>의 바탕</div>
+      <div class="num-q">Q. 느낀 점을 써 보세요.</div>
+      <div class="write-lines"><div class="wline"></div><div class="wline"></div><div class="wline"></div></div>
+    </div>
+
+  </div>
+  <div class="sec-sub" style="margin-bottom:6px;">
+    📌 보기 : <span class="chip">어거스트 디</span> <span class="chip">태평소</span> <span class="chip">취타장단</span>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sec-title">⑥ 감상문 쓰기</div>
+
+  <div class="essay-box">
+    <div class="essay-q-sm"><em>Q1</em>&nbsp; 슈가의 「대취타」에서 전통과 현대가 만난 부분 중 가장 인상 깊었던 점과 그 이유를 써 보세요.</div>
+    <div class="write-block"><div style="display:flex;flex-direction:column;gap:10px;"><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div></div></div>
+  </div>
+
+  <div class="essay-box">
+    <div class="essay-q-sm"><em>Q2</em>&nbsp; 대취타처럼 오래된 전통음악이 오늘날에도 사랑받으려면 어떤 노력이 필요할지 자신의 생각을 써 보세요.</div>
+    <div class="write-block"><div style="display:flex;flex-direction:column;gap:10px;"><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div></div></div>
+  </div>
+
+  <div class="page-footer">
+    <span>🥁 대취타 활동지</span>
+    <div style="display:flex;align-items:center;gap:5px;"><span>⑤ 오늘날의 대취타 · ⑥ 감상문</span><div class="page-num">4</div></div>
+  </div>
+</div>
+
+</body>
+</html>
